@@ -11,14 +11,14 @@ class Directory extends Component{
 
         return(
             <div className="directory-menu">
-                {sections.map(({id,title,imageUrl, size}) => {
+                {sections.map(({id, ...otherSectionProps}) => {
+                    console.log(otherSectionProps)
                     return(
-                    <MenuItem
-                    key={id}
-                    title={title}
-                    image={imageUrl}
-                    size={size}
-                    // link={x.linkUrl}
+                    <MenuItem key={id} {...otherSectionProps}
+                    // title={title}
+                    // image={imageUrl}
+                    // size={size}
+                    // link={linkUrl}
                     />
                     )
                 })}
